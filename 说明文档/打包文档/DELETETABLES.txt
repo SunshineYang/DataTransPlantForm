@@ -1,0 +1,45 @@
+DELETE   [dbo].[PT_CODE_DETAIL]
+
+DELETE   [dbo].[PT_CODE_DICT]
+
+
+DELETE  [dbo].[PT_COMPARISON]
+
+
+DELETE  [dbo].[PT_COMPARISON_DETAIL_DICT]
+
+
+DELETE  [dbo].[PT_DICT]
+
+DELETE  [dbo].[PT_EXPORT_LOG]
+
+
+DELETE  [dbo].[PT_LOCAL_DICT]
+
+
+
+DELETE  [dbo].[PT_LOCAL_DICT_LIST]
+
+
+DELETE  [dbo].[PT_SETTING]
+
+DELETE  [dbo].[PT_SQL]
+
+
+DELETE  [dbo].[PT_TABLES_DICT]
+
+
+DELETE  [dbo].[PT_TARGET_DICT]
+
+
+DELETE  [dbo].[PT_TARGET_FIELD]
+
+
+DELETE  [dbo].[PT_TEMP_FIELD]
+
+DELETE  [dbo].[PT_Up_DataBase_Setting]
+
+
+DELETE  [dbo].[PT_Up_DataBase_Table]
+
+DELETE  [dbo].[PT_XML_CONFIG]

@@ -1,0 +1,427 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A373BBDC-C076-4EF6-A419-E582910B7591}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DataExport</RootNamespace>
+    <AssemblyName>DataExport</AssemblyName>
+    <StartupObject>
+    </StartupObject>
+    <ApplicationIcon>17.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Data.v7.2, Version=7.2.5.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v7.2, Version=7.2.5.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraBars.v7.2, Version=7.2.5.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraCharts.v7.2, Version=7.2.5.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraCharts.v7.2.UI, Version=7.2.5.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraEditors.v7.2, Version=7.2.5.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraGrid.v7.2, Version=7.2.5.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraLayout.v7.2, Version=7.2.5.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraNavBar.v7.2, Version=7.2.5.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraPrinting.v7.2, Version=7.2.5.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraReports.v7.2, Version=7.2.5.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraRichTextEdit.v7.2, Version=7.2.5.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraTreeList.v7.2, Version=7.2.5.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EmrSysAdaper, Version=5.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ImportLib\EmrSysAdaper.DLL</HintPath>
+    </Reference>
+    <Reference Include="EmrSysCom, Version=5.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ImportLib\EmrSysCom.dll</HintPath>
+    </Reference>
+    <Reference Include="EmrSysComUnDAL, Version=5.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ImportLib\EmrSysComUnDAL.DLL</HintPath>
+    </Reference>
+    <Reference Include="EmrSysDAL, Version=5.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ImportLib\EmrSysDAL.DLL</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Data.SqlClient, Version=3.0.3600.0, Culture=neutral, PublicKeyToken=3be235df1c8d2ad3, processorArchitecture=MSIL" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="clsWriteErrorLogToDataBase.cs" />
+    <Compile Include="clsConvertDataToXML.cs" />
+    <Compile Include="clsExportFile.cs" />
+    <Compile Include="frmCompareFieldNmae.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCompareFieldNmae.Designer.cs">
+      <DependentUpon>frmCompareFieldNmae.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmContainer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmContainer.Designer.cs">
+      <DependentUpon>frmContainer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="clsPublicProperty.cs" />
+    <Compile Include="clsStrConvertToDateTime.cs" />
+    <Compile Include="uctlBaseTemplet.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="uctlBaseTemplet.Designer.cs">
+      <DependentUpon>uctlBaseTemplet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="uctlcmb_pt.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="uctlcmb_pt.Designer.cs">
+      <DependentUpon>uctlcmb_pt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="uctlManageField.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="uctlManageField.Designer.cs">
+      <DependentUpon>uctlManageField.cs</DependentUpon>
+    </Compile>
+    <Compile Include="uctlManageFildName.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="uctlManageFildName.Designer.cs">
+      <DependentUpon>uctlManageFildName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="uctlAddNewXMLLayout.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="uctlAddNewXMLLayout.Designer.cs">
+      <DependentUpon>uctlAddNewXMLLayout.cs</DependentUpon>
+    </Compile>
+    <Compile Include="uctlAddpt.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="uctlAddpt.Designer.cs">
+      <DependentUpon>uctlAddpt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="uctlAddTempField.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="uctlAddTempField.Designer.cs">
+      <DependentUpon>uctlAddTempField.cs</DependentUpon>
+    </Compile>
+    <Compile Include="uctlCancelCompare.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="uctlCancelCompare.Designer.cs">
+      <DependentUpon>uctlCancelCompare.cs</DependentUpon>
+    </Compile>
+    <Compile Include="uctlCompareFieldName.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="uctlCompareFieldName.Designer.cs">
+      <DependentUpon>uctlCompareFieldName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="uctlDataExchange.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="uctlDataExchange.Designer.cs">
+      <DependentUpon>uctlDataExchange.cs</DependentUpon>
+    </Compile>
+    <Compile Include="uctlDataFilter.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="uctlDataFilter.Designer.cs">
+      <DependentUpon>uctlDataFilter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="uctlDetailComparisonDict.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="uctlDetailComparisonDict.Designer.cs">
+      <DependentUpon>uctlDetailComparisonDict.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmCompareFieldNmae.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmCompareFieldNmae.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmContainer.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmContainer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="uctlBaseTemplet.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>uctlBaseTemplet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="uctlcmb_pt.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>uctlcmb_pt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="uctlManageField.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>uctlManageField.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="uctlManageFildName.resx">
+      <DependentUpon>uctlManageFildName.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="uctlAddNewXMLLayout.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>uctlAddNewXMLLayout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="uctlAddpt.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>uctlAddpt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="uctlAddTempField.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>uctlAddTempField.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="uctlBaseConfig.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>uctlBaseConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="uctlCancelCompare.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>uctlCancelCompare.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="uctlCompareFieldName.resx">
+      <DependentUpon>uctlCompareFieldName.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="uctlDataExchange.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>uctlDataExchange.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="uctlDataFilter.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>uctlDataFilter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="uctlDetailComparisonDict.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>uctlDetailComparisonDict.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="uctlAddNode.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>uctlAddNode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="uctlDoExport.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>uctlDoExport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="uctlDataImport.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>uctlDataImport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="uctlPTManage.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>uctlPTManage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="uctlRenameLayout.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>uctlRenameLayout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="uctlRenameNode.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>uctlRenameNode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="uctlAddSQLName.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>uctlAddSQLName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="uctlAddtable.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>uctlAddtable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="uctlShowImportField.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>uctlShowImportField.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="uctlUploadDataToDatabase.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>uctlUploadDataToDatabase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="uctlXMLconfig.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>uctlXMLconfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="App.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="SQL.config" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="uctlBaseConfig.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="uctlBaseConfig.Designer.cs">
+      <DependentUpon>uctlBaseConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="uctlAddNode.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="uctlAddNode.Designer.cs">
+      <DependentUpon>uctlAddNode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="uctlDoExport.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="uctlDoExport.Designer.cs">
+      <DependentUpon>uctlDoExport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="uctlDataImport.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="uctlDataImport.Designer.cs">
+      <DependentUpon>uctlDataImport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="uctlPTManage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="uctlPTManage.Designer.cs">
+      <DependentUpon>uctlPTManage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="uctlRenameLayout.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="uctlRenameLayout.Designer.cs">
+      <DependentUpon>uctlRenameLayout.cs</DependentUpon>
+    </Compile>
+    <Compile Include="uctlRenameNode.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="uctlRenameNode.Designer.cs">
+      <DependentUpon>uctlRenameNode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="uctlAddSQLName.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="uctlAddSQLName.Designer.cs">
+      <DependentUpon>uctlAddSQLName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="uctlAddtable.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="uctlAddtable.Designer.cs">
+      <DependentUpon>uctlAddtable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="uctlShowImportField.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="uctlShowImportField.Designer.cs">
+      <DependentUpon>uctlShowImportField.cs</DependentUpon>
+    </Compile>
+    <Compile Include="uctlUploadDataToDatabase.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="uctlUploadDataToDatabase.Designer.cs">
+      <DependentUpon>uctlUploadDataToDatabase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="uctlXMLconfig.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="uctlXMLconfig.Designer.cs">
+      <DependentUpon>uctlXMLconfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="clsUploadDataToDataBase.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ToolFunction\ToolFunction.csproj">
+      <Project>{F26E3EAB-1187-4C91-A41E-2BE3D0FFE4B7}</Project>
+      <Name>ToolFunction</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="17.ico" />
+    <Content Include="版本升级说明.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Debug\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

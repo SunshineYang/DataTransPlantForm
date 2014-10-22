@@ -1,0 +1,170 @@
+CREATE TABLE [dbo].[PT_CODE_DETAIL](
+	[CODE] [nvarchar](100) NULL,
+	[CODE_NAME] [nvarchar](100) NULL,
+	[DICT_ID] [nvarchar](100) NULL
+) ON [PRIMARY]
+
+CREATE TABLE [dbo].[PT_CODE_DICT](
+	[DICT_ID] [nvarchar](100) NOT NULL,
+	[DICT_NAME] [nvarchar](100) NULL,
+	[PT_ID] [nvarchar](50) NULL,
+	[DICT_FALG] [nvarchar](50) NULL
+) ON [PRIMARY]
+
+
+CREATE TABLE [dbo].[PT_COMPARISON](
+	[PT_ID] [nvarchar](100) NULL,
+	[FIELD_NAME] [nvarchar](100) NULL,
+	[FIELD] [nvarchar](100) NULL,
+	[FIELD_TYPE] [nvarchar](100) NULL,
+	[COMPARE_ID] [nvarchar](100) NOT NULL,
+	[PT_NAME] [nvarchar](100) NULL,
+	[TABLE_NAME] [nvarchar](100) NULL,
+	[COMPARE_NAME] [nvarchar](100) NULL,
+	[SOURCETYPE] [nvarchar](100) NULL
+) ON [PRIMARY]
+
+
+CREATE TABLE [dbo].[PT_COMPARISON_DETAIL_DICT](
+	[PT_ID] [nvarchar](100) NULL,
+	[TYPE] [nvarchar](100) NULL,
+	[TYPE_NAME] [nvarchar](100) NULL,
+	[FIELD] [nvarchar](100) NULL,
+	[FIELD_CODE] [nvarchar](100) NULL,
+	[COMPARE_NAME] [nvarchar](100) NULL,
+	[COMPARE_CODE] [nvarchar](100) NULL,
+	[ID] [nvarchar](100) NULL
+) ON [PRIMARY]
+
+
+CREATE TABLE [dbo].[PT_DICT](
+	[PT_NAME] [nvarchar](100) NULL,
+	[PT_ID] [nvarchar](100) NULL,
+	[TYPE] [nvarchar](100) NULL,
+	[TYPE_NAME] [nvarchar](100) NULL
+) ON [PRIMARY]
+
+
+CREATE TABLE [dbo].[PT_EXPORT_LOG](
+	[LOG_DATE] [datetime] NULL,
+	[PATIENT_ID] [nvarchar](50) NULL,
+	[VISIT_ID] [nvarchar](50) NULL,
+	[EXPORT_FLAG] [nvarchar](50) NULL
+) ON [PRIMARY]
+
+
+CREATE TABLE [dbo].[PT_LOCAL_DICT](
+	[PT_ID] [nvarchar](100) NULL,
+	[FIELD] [nvarchar](100) NULL,
+	[FIELD_CODE] [nvarchar](100) NULL,
+	[ID] [nvarchar](100) NOT NULL,
+	[TYPE_NAME] [nvarchar](100) NULL
+) ON [PRIMARY]
+
+
+
+CREATE TABLE [dbo].[PT_LOCAL_DICT_LIST](
+	[LOCAL_ID] [nvarchar](100) NULL,
+	[LOCAL_NAME] [nvarchar](100) NULL
+) ON [PRIMARY]
+
+
+CREATE TABLE [dbo].[PT_SETTING](
+	[PT_ID] [nvarchar](100) NULL,
+	[PLATFORM_ADDRESS] [nvarchar](100) NULL,
+	[LOGIN] [nvarchar](100) NULL,
+	[PASSWORD] [nvarchar](100) NULL,
+	[UPDATE_TIME] [nvarchar](100) NULL,
+	[ORGANIZATION_CODE] [nvarchar](100) NULL,
+	[STORAGE_LOCATION] [nvarchar](100) NULL,
+	[ORGANIZATION_PASSWORD] [nvarchar](100) NULL,
+	[ORGANIZATION_NAME] [nvarchar](100) NULL,
+	[DBFPATH] [nvarchar](100) NULL,
+	[EXPORTFILETYPE] [nvarchar](100) NULL,
+	[CONNSTR] [nvarchar](100) NULL
+) ON [PRIMARY]
+
+
+CREATE TABLE [dbo].[PT_SQL](
+	[PT_ID] [nvarchar](100) NOT NULL,
+	[SQL_NAME] [nvarchar](100) NULL,
+	[SQL] [nvarchar](1000) NULL
+) ON [PRIMARY]
+
+
+CREATE TABLE [dbo].[PT_TABLES_DICT](
+	[PT_ID] [nvarchar](100) NULL,
+	[TABLE_NAME] [nvarchar](100) NULL,
+	[EXPORTFLAG] [nvarchar](10) NULL,
+	[ID] [nvarchar](100) NOT NULL
+) ON [PRIMARY]
+
+
+
+CREATE TABLE [dbo].[PT_TARGET_DICT](
+	[FIELD] [nvarchar](100) NULL,
+	[FIELD_CODE] [nvarchar](100) NULL,
+	[COMPARE_FLAG] [nvarchar](100) NULL,
+	[DICT_ID] [nvarchar](100) NULL,
+	[ID] [nvarchar](100) NOT NULL
+) ON [PRIMARY]
+
+
+CREATE TABLE [dbo].[PT_TARGET_FIELD](
+	[PT_ID] [nvarchar](100) NULL,
+	[PT_NAME] [nvarchar](100) NULL,
+	[TABLE_NAME] [nvarchar](100) NULL,
+	[FIELD_NAME] [nvarchar](100) NULL,
+	[FIELD] [nvarchar](100) NULL,
+	[FIELD_TYPE] [nvarchar](100) NULL,
+	[COMPARE_NAME] [nvarchar](100) NULL,
+	[COMPARE_ID] [nvarchar](100) NOT NULL,
+	[FIELD_LENGTH] [nvarchar](100) NULL
+) ON [PRIMARY]
+
+
+CREATE TABLE [dbo].[PT_TEMP_FIELD](
+	[ID] [nvarchar](100) NULL,
+	[PT_NAME] [nvarchar](100) NULL,
+	[CLASS_NAME] [nvarchar](100) NULL,
+	[ITEM_NAME] [nvarchar](100) NULL,
+	[ITEM_CODE] [nvarchar](100) NULL,
+	[PT_ID] [nvarchar](100) NULL,
+	[CENGCI_CODE] [nvarchar](100) NULL,
+	[SOURCETYPE] [nvarchar](100) NULL,
+	[FIELD_NAME] [nvarchar](100) NULL
+) ON [PRIMARY]
+
+
+CREATE TABLE [dbo].[PT_Up_DataBase_Setting](
+	[PT_ID] [nvarchar](100) NULL,
+	[PT_DataBase] [nvarchar](100) NULL,
+	[Joins] [nvarchar](1000) NULL
+) ON [PRIMARY]
+
+
+
+CREATE TABLE [dbo].[PT_Up_DataBase_Table](
+	[PT_ID] [nvarchar](100) NULL,
+	[PT_TABLE] [nvarchar](100) NULL,
+	[PT_DATA] [nvarchar](100) NULL,
+	[PT_DATA_TABLE] [nvarchar](100) NULL,
+	[ID] [nvarchar](100) NULL
+) ON [PRIMARY]
+
+
+CREATE TABLE [dbo].[PT_XML_CONFIG](
+	[PARIENT_ID] [nvarchar](100) NULL,
+	[FIELD_NAME] [nvarchar](100) NULL,
+	[ID] [nvarchar](100) NULL,
+	[FIELD] [nvarchar](100) NULL,
+	[PT_ID] [nvarchar](100) NULL,
+	[MULTIPLE] [nvarchar](100) NULL,
+	[LAYOUT_NAME] [nvarchar](50) NULL
+) ON [PRIMARY]
+
+CREATE TABLE [dbo].[PT_ERROR_LOG](
+	[ID] [nvarchar](100) NULL,
+	[DATETIME] [nvarchar](100) NULL,
+	[MESS] [nvarchar](4000) NULL,	
+) ON [PRIMARY]

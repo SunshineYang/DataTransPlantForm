@@ -1,0 +1,168 @@
+CREATE TABLE PT_CODE_DETAIL(
+  CODE varchar(100) NULL,
+  CODE_NAME varchar(100) NULL,
+  DICT_ID varchar(100) NULL
+); 
+
+CREATE TABLE PT_CODE_DICT(
+  DICT_ID varchar(100) NOT NULL,
+  DICT_NAME varchar(100) NULL,
+  PT_ID varchar(50) NULL,
+  DICT_FALG varchar(50) NULL
+) ;
+
+
+CREATE TABLE PT_COMPARISON(
+  PT_ID varchar(100) NULL,
+  FIELD_NAME varchar(100) NULL,
+  FIELD varchar(100) NULL,
+  FIELD_TYPE varchar(100) NULL,
+  COMPARE_ID varchar(100) NOT NULL,
+  PT_NAME varchar(100) NULL,
+  TABLE_NAME varchar(100) NULL,
+  COMPARE_NAME varchar(100) NULL,
+  SOURCETYPE varchar(100) NULL
+) ;
+
+
+CREATE TABLE PT_COMPARISON_DETAIL_DICT(
+  PT_ID varchar(100) NULL,
+  TYPE varchar(100) NULL,
+  TYPE_NAME varchar(100) NULL,
+  FIELD varchar(100) NULL,
+  FIELD_CODE varchar(100) NULL,
+  COMPARE_NAME varchar(100) NULL,
+  COMPARE_CODE varchar(100) NULL,
+  ID varchar(100) NULL
+) ;
+
+
+CREATE TABLE PT_DICT(
+  PT_NAME varchar(100) NULL,
+  PT_ID varchar(100) NULL,
+  TYPE varchar(100) NULL,
+  TYPE_NAME varchar(100) NULL
+) ;
+
+
+CREATE TABLE PT_EXPORT_LOG(
+  LOG_DATE date NULL,
+  PATIENT_ID varchar(50) NULL,
+  VISIT_ID varchar(50) NULL,
+  EXPORT_FLAG varchar(50) NULL
+) ;
+
+
+CREATE TABLE PT_LOCAL_DICT(
+  PT_ID varchar(100) NULL,
+  FIELD varchar(100) NULL,
+  FIELD_CODE varchar(100) NULL,
+  ID varchar(100) NOT NULL,
+  TYPE_NAME varchar(100) NULL
+) ;
+
+
+
+CREATE TABLE PT_LOCAL_DICT_LIST(
+  LOCAL_ID varchar(100) NULL,
+  LOCAL_NAME varchar(100) NULL
+) ;
+
+
+CREATE TABLE PT_SETTING(
+  PT_ID varchar(100) NULL,
+  PLATFORM_ADDRESS varchar(100) NULL,
+  LOGIN varchar(100) NULL,
+  PASSWORD varchar(100) NULL,
+  UPDATE_TIME varchar(100) NULL,
+  ORGANIZATION_CODE varchar(100) NULL,
+  STORAGE_LOCATION varchar(100) NULL,
+  ORGANIZATION_PASSWORD varchar(100) NULL,
+  ORGANIZATION_NAME varchar(100) NULL,
+  DBFPATH varchar(100) NULL,
+  EXPORTFILETYPE varchar(100) NULL
+) ;
+
+
+CREATE TABLE PT_SQL(
+  PT_ID varchar(100) NOT NULL,
+  SQL_NAME varchar(100) NULL,
+  SQL varchar(1000) NULL
+) ;
+
+
+CREATE TABLE PT_TABLES_DICT(
+  PT_ID varchar(100) NULL,
+  TABLE_NAME varchar(100) NULL,
+  ID varchar(100) NOT NULL
+) ;
+
+
+
+CREATE TABLE PT_TARGET_DICT(
+  FIELD varchar(100) NULL,
+  FIELD_CODE varchar(100) NULL,
+  COMPARE_FLAG varchar(100) NULL,
+  DICT_ID varchar(100) NULL,
+  ID varchar(100) NOT NULL
+) ;
+
+
+CREATE TABLE PT_TARGET_FIELD(
+  PT_ID varchar(100) NULL,
+  PT_NAME varchar(100) NULL,
+  TABLE_NAME varchar(100) NULL,
+  FIELD_NAME varchar(100) NULL,
+  FIELD varchar(100) NULL,
+  FIELD_TYPE varchar(100) NULL,
+  COMPARE_NAME varchar(100) NULL,
+  COMPARE_ID varchar(100) NOT NULL,
+  FIELD_LENGTH varchar(100) NULL
+) ;
+
+
+CREATE TABLE PT_TEMP_FIELD(
+  ID varchar(100) NULL,
+  PT_NAME varchar(100) NULL,
+  CLASS_NAME varchar(100) NULL,
+  ITEM_NAME varchar(100) NULL,
+  ITEM_CODE varchar(100) NULL,
+  PT_ID varchar(100) NULL,
+  CENGCI_CODE varchar(100) NULL,
+  SOURCETYPE varchar(100) NULL,
+  FIELD_NAME varchar(100) NULL
+) ;
+
+
+CREATE TABLE PT_Up_DataBase_Setting(
+  PT_ID varchar(100) NULL,
+  PT_DataBase varchar(100) NULL,
+  Joins varchar(1000) NULL
+) ;
+
+
+
+CREATE TABLE PT_Up_DataBase_Table(
+  PT_ID varchar(100) NULL,
+  PT_TABLE varchar(100) NULL,
+  PT_DATA varchar(100) NULL,
+  PT_DATA_TABLE varchar(100) NULL,
+  ID varchar(100) NULL
+) ;
+
+
+CREATE TABLE PT_XML_CONFIG(
+  PARIENT_ID varchar(100) NULL,
+  FIELD_NAME varchar(100) NULL,
+  ID varchar(100) NULL,
+  FIELD varchar(100) NULL,
+  PT_ID varchar(100) NULL,
+  MULTIPLE varchar(100) NULL,
+  LAYOUT_NAME varchar(50) NULL
+) ;
+
+CREATE TABLE PT_ERROR_LOG(
+  ID varchar(100) NULL,
+  DATETIME varchar(100) NULL,
+  MESS varchar(4000) NULL
+) ;
